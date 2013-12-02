@@ -13,11 +13,11 @@ This library contains useful utility functions that I found myself writing more 
 
 ```javascript
 // returns true || false
-var ejade.isMobile(); 
+ejade.isMobile(); 
 ```
 
 ```javascript
-var ejade.isMobile(function(match, device){
+ejade.isMobile(function(match, device){
   console.log(match + " " + device);
 }); 
 ```
@@ -25,7 +25,7 @@ var ejade.isMobile(function(match, device){
 ```javascript
 // check for ipad,iphone or android
 // callback passes match true or false AND device name
-var ejade.isMobile('ipad, iphone, android', function(match, device){
+ejade.isMobile('ipad, iphone, android', function(match, device){
   console.log(match + " " + device );
 }); 
 ```
@@ -33,11 +33,11 @@ var ejade.isMobile('ipad, iphone, android', function(match, device){
 
 ```javascript
 // returns true || false
-var ejade.isRetina(); 
+ejade.isRetina(); 
 ```
 
 ```javascript
-var ejade.isRetina(function(bool){
+ejade.isRetina(function(bool){
   console.log("Retina: " + bool);
 }); 
 ```
