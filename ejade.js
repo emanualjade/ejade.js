@@ -21,15 +21,15 @@ var ejade = {
 
 
   /*
-    ej.isMobile() true || false
+    ejade.isMobile() true || false
 
-    ej.isMobile(function(match, device){
+    ejade.isMobile(function(match, device){
       //match is true or false
       //device is false or device matched as a string
       console.log(match + " " + device);
     }); true || false
 
-    ej.isMobile('ipad, android, iphone', function(match, device){
+    ejade.isMobile('ipad, android, iphone', function(match, device){
       // you can pass in multiple params to match against
       // this case will check for a match against ipad || android || iphone
       // match is true or false

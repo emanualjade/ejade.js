@@ -1,9 +1,43 @@
-# ejade.js is a javascript utility library
+# ejade.js - javascript utility library
 
 This library contains useful utility functions that I find myself writing more than once
 
-# Requires 
+## Requires 
 * jQuery
 * ejade.js 
 * ejade.css
 
+## Methods
+
+* ejade.isMobile();
+
+```javascript
+// returns true || false
+var ejade.isMobile(); 
+```
+
+```javascript
+// returns true || false
+var ejade.isMobile(function(match, device){
+  console.log(match + " " + device);
+}); 
+```
+
+```javascript
+// check for ipad,iphone or android
+// callback passes match true or false AND device name
+var ejade.isMobile('ipad, iphone, android', function(match, device){
+  console.log(match + " " + device );
+}); 
+```
+
+* Show for device
+Adding one of the following classes to an html element will make it visible for the specified device
+```css
+.show-for-android
+.show-for-iphone
+.show-for-ipad
+.show-for-ipod
+.show-for-blackberry
+.show-for-kindle
+```
