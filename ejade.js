@@ -126,13 +126,23 @@ var ejade = {
           document.documentElement.className+=' ie11 ie';
        }
     }
+  },
+
+  //Make ie8 support window.location.origin
+  locationOriginFix: function(){
+    if( !window.location.origin ){
+      if(window.location.port){
+        port = ':' + window.location.port
+      }else{
+        port = ''
+      }
+      window.location.origin = window.location.protocol + "//" + window.location.hostname + port
+    }
   }
-  
 
 };
 
 ejade.showForDevice('iphone, ipad, ipod, android, blackberry, kindle');
 ejade.addIE10Class();
 ejade.addIE11Class();
-
-
+ejade.locationOriginFix();

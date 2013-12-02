@@ -57,4 +57,5 @@ var ejade.isRetina(function(bool){
 ## IE Browser Utility Methods
 * ejade.addIE10Class(); - adds "ie10" class to the html in the document for ie10 browser
 * ejade.addIE11Class(); - adds "ie11" class to the html in the document for ie11 browser
+* ejade.locationOriginFix(); - Polyfill - Adds support for window.location.origin in ie8
 
