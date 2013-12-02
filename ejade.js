@@ -37,14 +37,14 @@ ejade = {
     });
   */
 
-  isMobile: function(device){
+  isMobile: function(){
     var userAgent = navigator.userAgent||navigator.vendor||window.opera;
     var deviceArray = [];
     var callback = false;
     var match = false;
     var deviceName = false;
     
-    for(var i=0; i < arguments.length; i++){
+    for(var i=0, l=arguments.length; i < l; ++i){
       if(typeof arguments[i] == "string"){
         deviceArray = arguments[i].split(",");
       }
@@ -149,7 +149,7 @@ ejade = {
   //Add ie11 class to the document if the browser is ie11
   addIE11Class: function(){
     var ie11Styles = ['msTextCombineHorizontal'];
-    for (var i = 0; i < ie11Styles.length; i++) {
+    for (var i = 0, l=ie11Styles.length; i < l; ++i) {
        property = ie11Styles[i];
        if (document.body.style[property] != undefined) {
           document.documentElement.className+=' ie11 ie';
