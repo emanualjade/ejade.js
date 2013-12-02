@@ -9,6 +9,8 @@ This library contains useful utility functions that I found myself writing more 
 
 ## Mobile Device Utility Methods
 
+#### Check for mobile devices based on user agent
+
 * ejade.isMobile();
 
 ```javascript
@@ -52,8 +54,9 @@ ejade.isRetina(function(bool){
   console.log("Retina: " + bool);
 }); 
 ```
+#### Show and hide html elements with css classes based on device
 
-* SHOW FOR DEVICE CSS - Adding one of the following classes to an html element will make it visible for the specified device
+Adding one of the following classes to an html element will make it visible for the specified device
 
 ```
 //CSS
