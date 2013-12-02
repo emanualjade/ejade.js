@@ -1,6 +1,26 @@
 var ej = {
   
   /*
+  show things for specific devices
+  setup your css beforehand to use classes like the following
+  .show-for-iphone{ display: none; }
+  .show-for-ipad{ display: none; }
+  .show-for-ipod{ display: none; }
+  .show-for-android{ display: none; }
+  .show-for-blackberry{ display: none; }
+  .show-for-kindle{ display: none; }
+  example: ej.showForDevice('iphone, ipad, ipod, android, blackberry, kindle');
+  */
+  showForDevice: function(deviceList){
+    ej.isMobile(deviceList, function(match, device){
+      if(match){
+        $( '.show-for-' + device.toLowerCase() ).show();
+      }
+    });
+  },
+
+
+  /*
     ej.isMobile() true || false
 
     ej.isMobile(function(match, device){
@@ -62,3 +82,4 @@ var ej = {
   }
 
 };
+ej.showForDevice('iphone, ipad, ipod, android, blackberry, kindle');
