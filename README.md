@@ -31,7 +31,7 @@ var ejade.isMobile('ipad, iphone, android', function(match, device){
 }); 
 ```
 
-* Show for device - Adding one of the following classes to an html element will make it visible for the specified device
+* SHOW FOR DEVICE CSS - Adding one of the following classes to an html element will make it visible for the specified device
 
 ```
 //CSS
