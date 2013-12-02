@@ -79,6 +79,33 @@ var ejade = {
     }
     return match;
 
+  },
+
+  /*
+  Detect retina display
+  ejade.isRetina() returns true || false
+  ejade.isRetina(function(bool){
+    console.log("Retina: " + bool);
+  });
+  */
+  isRetina: function(callback){
+    var retina = false;
+    
+    if (window.matchMedia) { 
+      var mq = window.matchMedia("only screen and (-moz-min-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 2.6/2), only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen  and (min-device-pixel-ratio: 1.3), only screen and (min-resolution: 1.3dppx)");
+      if(mq && mq.matches) {
+        retina = true;
+      }else{
+        retina = false;
+      }
+    }
+
+    if(typeof callback == "function"){
+      callback(retina);
+    }
+    
+    return retina;
+    
   }
 
 };

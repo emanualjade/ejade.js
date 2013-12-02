@@ -30,6 +30,19 @@ var ejade.isMobile('ipad, iphone, android', function(match, device){
   console.log(match + " " + device );
 }); 
 ```
+* ejade.isRetina();
+
+```javascript
+// returns true || false
+var ejade.isRetina(); 
+```
+
+```javascript
+// returns true || false
+var ejade.isRetina(function(bool){
+  console.log("Retina: " + bool);
+}); 
+```
 
 * SHOW FOR DEVICE CSS - Adding one of the following classes to an html element will make it visible for the specified device
 
