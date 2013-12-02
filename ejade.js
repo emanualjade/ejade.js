@@ -14,7 +14,7 @@ ejade = {
   showForDevice: function(deviceList){
     ejade.isMobile(deviceList, function(match, device){
       if(match){
-        $( '.show-for-' + device.toLowerCase() ).show();
+        jQuery( '.show-for-' + device.toLowerCase() ).show();
       }
     });
   },
@@ -37,26 +37,25 @@ ejade = {
     });
   */
 
-  isMobile: function(device, callback){
+  isMobile: function(device){
     var userAgent = navigator.userAgent||navigator.vendor||window.opera;
     var deviceArray = [];
-    var callbackfunction = false;
+    var callback = false;
     var match = false;
     var deviceName = false;
     
     for(var i=0; i < arguments.length; i++){
       if(typeof arguments[i] == "string"){
-        var deviceArray = arguments[i].split(",");
+        deviceArray = arguments[i].split(",");
       }
       if(typeof arguments[i] == 'function'){
-        callbackfunction = true;
         callback = arguments[i];
       }      
     }
     
     if(deviceArray.length > 0){
       // if string search param passed match against supplied devices
-      for(var i=0; i < deviceArray.length; i++){
+      for(var i=0, l=deviceArray.length; i < l; ++i){
         var re = new RegExp(deviceArray[i].trim(), "i");
         if( userAgent.match(re) ){
           deviceName = navigator.userAgent.match(re)[0];
@@ -73,13 +72,11 @@ ejade = {
       }
     }
 
-    if(callbackfunction){
+    if(typeof callback == "function"){
       callback(match, deviceName);
-    }else{
-      return match;
+      return null;
     }
-    
-
+    return match;
   },
   
   // Get initial and current size and bootstrap narrow info
@@ -90,13 +87,13 @@ ejade = {
     
   size: {
     
-    initialSize: $(window).width(),
+    initialSize: jQuery(window).width(),
     
     width: function(when){
       if(when == 'initial'){
         return ejade.initialSize;
       }else{
-        return $(window).width();
+        return jQuery(window).width();
       }
     },
     isNarrow: function(when){
@@ -107,7 +104,7 @@ ejade = {
       }
     },
     narrowCheck: function(size){
-      size = size || $(window).width();
+      size = size || jQuery(window).width();
       if( size < 768 ){
         return true; 
       }else{
@@ -130,19 +127,18 @@ ejade = {
       var mq = window.matchMedia("only screen and (-moz-min-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 2.6/2), only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen  and (min-device-pixel-ratio: 1.3), only screen and (min-resolution: 1.3dppx)");
       if(mq && mq.matches) {
         retina = true;
-      }else{
-        retina = false;
       }
     }
 
     if(typeof callback == "function"){
       callback(retina);
-    }else{
-      return retina;
+      return null;
     }
+
+    return retina;
     
   },
-  
+
   //Add ie10 class to the document if the browser is ie10
   addIE10Class: function(){
     if(/*@cc_on!@*/false){
