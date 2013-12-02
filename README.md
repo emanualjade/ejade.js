@@ -31,13 +31,14 @@ var ejade.isMobile('ipad, iphone, android', function(match, device){
 }); 
 ```
 
-* Show for device
-Adding one of the following classes to an html element will make it visible for the specified device
-```css
-.show-for-android
-.show-for-iphone
-.show-for-ipad
-.show-for-ipod
-.show-for-blackberry
-.show-for-kindle
+* Show for device - Adding one of the following classes to an html element will make it visible for the specified device
+
+```
+//CSS
+* .show-for-android
+* .show-for-iphone
+* .show-for-ipad
+* .show-for-ipod
+* .show-for-blackberry
+* .show-for-kindle
 ```
