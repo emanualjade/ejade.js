@@ -1,4 +1,4 @@
-var ej = {
+var ejade = {
   
   /*
   show things for specific devices
@@ -12,7 +12,7 @@ var ej = {
   example: ej.showForDevice('iphone, ipad, ipod, android, blackberry, kindle');
   */
   showForDevice: function(deviceList){
-    ej.isMobile(deviceList, function(match, device){
+    ejade.isMobile(deviceList, function(match, device){
       if(match){
         $( '.show-for-' + device.toLowerCase() ).show();
       }
@@ -82,4 +82,4 @@ var ej = {
   }
 
 };
-ej.showForDevice('iphone, ipad, ipod, android, blackberry, kindle');
+ejade.showForDevice('iphone, ipad, ipod, android, blackberry, kindle');
