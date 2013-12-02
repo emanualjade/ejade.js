@@ -1,4 +1,4 @@
-var ejade = {
+ejade = {
   
   /*
   show things for specific devices
@@ -18,7 +18,6 @@ var ejade = {
       }
     });
   },
-
 
   /*
     ejade.isMobile() true || false
@@ -82,7 +81,41 @@ var ejade = {
     
 
   },
-
+  
+  // Get initial and current size and bootstrap narrow info
+  // ejade.size.width('intitial')
+  // ejade.size.width('current')
+  // ejade.size.isNarrow('initial')
+  // ejade.size.isNarrow('current')
+    
+  size: {
+    
+    initialSize: $(window).width(),
+    
+    width: function(when){
+      if(when == 'initial'){
+        return ejade.initialSize;
+      }else{
+        return $(window).width();
+      }
+    },
+    isNarrow: function(when){
+      if(when == "initial"){
+        return ejade.size.narrowCheck(ejade.size.initialSize);
+      }else{ 
+        return ejade.size.narrowCheck();
+      }
+    },
+    narrowCheck: function(size){
+      size = size || $(window).width();
+      if( size < 768 ){
+        return true; 
+      }else{
+        return false;
+      }
+    }
+  },
+    
   /*
   Detect retina display
   ejade.isRetina() returns true || false
@@ -141,6 +174,7 @@ var ejade = {
   }
 
 };
+
 
 ejade.showForDevice('iphone, ipad, ipod, android, blackberry, kindle');
 ejade.addIE10Class();
