@@ -53,3 +53,8 @@ var ejade.isRetina(function(bool){
 * .show-for-blackberry
 * .show-for-kindle
 ```
+
+## IE browser utilities
+* ejade.addIE10Class(); - adds "ie10" class to the html in the document for ie10 browser
+* ejade.addIE11Class(); - adds "ie11" class to the html in the document for ie11 browser
+
