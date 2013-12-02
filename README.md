@@ -7,7 +7,7 @@ This library contains useful utility functions that I found myself writing more 
 * ejade.js 
 * ejade.css
 
-## Methods
+## Mobile Device Utility Methods
 
 * ejade.isMobile();
 
@@ -54,7 +54,7 @@ var ejade.isRetina(function(bool){
 * .show-for-kindle
 ```
 
-## IE browser utilities
+## IE Browser Utility Methods
 * ejade.addIE10Class(); - adds "ie10" class to the html in the document for ie10 browser
 * ejade.addIE11Class(); - adds "ie11" class to the html in the document for ie11 browser
 
