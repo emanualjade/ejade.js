@@ -76,8 +76,10 @@ var ejade = {
 
     if(callbackfunction){
       callback(match, deviceName);
+    }else{
+      return match;
     }
-    return match;
+    
 
   },
 
@@ -102,9 +104,9 @@ var ejade = {
 
     if(typeof callback == "function"){
       callback(retina);
+    }else{
+      return retina;
     }
-    
-    return retina;
     
   }
 

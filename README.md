@@ -17,7 +17,6 @@ var ejade.isMobile();
 ```
 
 ```javascript
-// returns true || false
 var ejade.isMobile(function(match, device){
   console.log(match + " " + device);
 }); 
@@ -38,7 +37,6 @@ var ejade.isRetina();
 ```
 
 ```javascript
-// returns true || false
 var ejade.isRetina(function(bool){
   console.log("Retina: " + bool);
 }); 
