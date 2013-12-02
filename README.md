@@ -30,7 +30,10 @@ ejade.isMobile('ipad, iphone, android', function(match, device){
 }); 
 ```
 
-### Check for narrow and wide window sizes - returns current or initial window
+### Check for narrow and wide window sizes
+
+returns current or initial window based on 768 break to narrow view with bootstrap 3
+
 * ejade.size.width('intitial')
 * ejade.size.width('current')
 * ejade.size.isNarrow('initial')
